@@ -4,7 +4,7 @@ name: Github-Profile-Summary-Cards
 on:
   schedule:
     # 每24小时触发一次
-    - cron: "0 0 * * *"
+    - cron: "* */24 * * *"
   # 开启手动触发
   workflow_dispatch:
   

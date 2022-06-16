@@ -1,10 +1,11 @@
 name: GitHub Action Demo
 on: 
-  # 当执行push的时候
+  # 当执行 `push` 或 ·pull_request` 时就触发工作流的执行，这里仅针对 `main` 分支
   push:
-    # 条件为master分支
-    branches:
-      - master
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+# 工作流由一个或多个作业（job）组成，这些作业可以顺序运行也可以并行运行
 jobs:
   # 当前的工作流仅包含一个作业，作业ID是"build"
   build:

@@ -1,16 +1,29 @@
 name: GitHub Action Demo
 on: 
+  # 当执行push的时候
   push:
+    # 条件为master分支
     branches:
       - master
 jobs:
+  # 当前的工作流仅包含一个作业，作业ID是"build"
   build:
+    # 作业名称
+    name: build demo actions
+    # 执行作业所需的运行器 ubuntu
     runs-on: ubuntu-latest
+    
+    # steps 代表了作业中包含的一系列可被执行的任务
     steps:
-      - name: Checkout Master
-        uses: actions/checkout@v2
-        
-      - name: Cat text
-        run: | 
-          'cat dsatext'
+      # 在 $GITHUB_WORKSPACE 下 checks-out 当前仓库，这样当前作业就可以访问该仓库
+      - uses: actions/checkout@v2
       
+      # 使用运行器的终端运行一条命令
+      - name: Run a one-line script
+        run: echo Hello, world!
+      
+      # 使用运行器的终端运行一组命令
+      - name: Run a multi-line sciprt
+        run: |
+          echo add other actions to build,
+          echo test, add depoly your project

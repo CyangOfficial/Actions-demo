@@ -21,6 +21,6 @@ jobs:
       # 第二步，引入目标 action: vn7n24fzkq/github-profile-summary-cards仓库中的 `release` 分支
       - uses: vn7n24fzkq/github-profile-summary-cards@release
         env:
-          GITHUB_TOKEN: ${{ secrets.SUMMARY_CARDS_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.README }}
         with:
           USERNAME: ${{ github.repository_owner }}

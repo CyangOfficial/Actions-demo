@@ -12,5 +12,5 @@ jobs:
         
       - name: Cat text
         run: | 
-          cat text
+          'cat dsatext'
       
